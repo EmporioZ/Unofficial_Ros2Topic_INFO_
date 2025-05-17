@@ -20,12 +20,13 @@ ros2 interface show go2_interfaces/msg/IMU
 ```
 ros2 topic echo imu
 ```
-- quaternion:
+```
+quaternion:
 - 0.6851580142974854
 - 0.004290999844670296
 - -0.005257999990135431
 - -0.7283629775047302
--gyroscope:
+gyroscope:
 - -0.011718000285327435
 - 0.003195999888703227
 - -0.005326000042259693
@@ -37,8 +38,8 @@ ros2 topic echo imu
 - 0.013539000414311886
 - -0.0009539999882690609
 - -1.6319140195846558
-- temperature: 79
-
+temperature: 79
+```
 # topic (2HZ): /point_cloud2
 
 ```

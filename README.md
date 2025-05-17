@@ -44,9 +44,9 @@ ros2 topic echo imu
 ```
 ros2 topic info /point_cloud2
 ```
-Type: sensor_msgs/msg/PointCloud2
-Publisher count: 1
-Subscription count: 0
+- Type: sensor_msgs/msg/PointCloud2
+- Publisher count: 1
+- Subscription count: 0
 ```
 ros2 interface show sensor_msgs/msg/PointCloud2
 ```
@@ -56,65 +56,63 @@ The point cloud data may be organized 2d (image-like) or 1d (unordered).
 Point clouds organized as 2d images may be produced by camera depth sensors such as stereo or time-of-flight.
 Time of sensor data acquisition, and the coordinate frame ID (for 3d points).
 
-std_msgs/Header header
-	builtin_interfaces/Time stamp
-		int32 sec
-		uint32 nanosec
-	string frame_id
+- std_msgs/Header header
+- 	builtin_interfaces/Time stamp
+- 		int32 sec
+- 		uint32 nanosec
+- 	string frame_id
 
-#2D structure of the point cloud. If the cloud is unordered, height is
-#1 and width is the length of the point cloud.
-uint32 height
-uint32 width
+2D structure of the point cloud. If the cloud is unordered, height is 1 and width is the length of the point cloud.
+- uint32 height
+- uint32 width
+Describes the channels and their layout in the binary data blob.
+- PointField[] fields
+- 	uint8 INT8    = 1
+- 	uint8 UINT8   = 2
+- 	uint8 INT16   = 3
+- 	uint8 UINT16  = 4
+- 	uint8 INT32   = 5
+- 	uint8 UINT32  = 6
+- 	uint8 FLOAT32 = 7
+- 	uint8 FLOAT64 = 8
+- 	string name      #
+- 	uint32 offset    #
+- 	uint8  datatype  #
+- 	uint32 count     #
 
-#Describes the channels and their layout in the binary data blob.
-PointField[] fields
-	uint8 INT8    = 1
-	uint8 UINT8   = 2
-	uint8 INT16   = 3
-	uint8 UINT16  = 4
-	uint8 INT32   = 5
-	uint8 UINT32  = 6
-	uint8 FLOAT32 = 7
-	uint8 FLOAT64 = 8
-	string name      #
-	uint32 offset    #
-	uint8  datatype  #
-	uint32 count     #
+- bool    is_bigendian # Is this data bigendian?
+- uint32  point_step   # Length of a point in bytes
+- uint32  row_step     # Length of a row in bytes
+- uint8[] data         # Actual point data, size is (row_step*height)
 
-bool    is_bigendian # Is this data bigendian?
-uint32  point_step   # Length of a point in bytes
-uint32  row_step     # Length of a row in bytes
-uint8[] data         # Actual point data, size is (row_step*height)
-
-bool is_dense        # True if there are no invalid points
+- bool is_dense        # True if there are no invalid points
 ```
 ros2 topic echo /point_cloud2
 ```
-header:
-  stamp:
-    sec: 1745585914
-    nanosec: 375928826
-  frame_id: odom
-height: 1
-width: 82314
-fields:
+- header:
+-   stamp:
+-     sec: 1745585914
+-     nanosec: 375928826
+-   frame_id: odom
+- height: 1
+- width: 82314
+- fields:
 - name: x
-  offset: 0
-  datatype: 7
-  count: 1
+-   offset: 0
+-   datatype: 7
+-   count: 1
 - name: y
-  offset: 4
-  datatype: 7
-  count: 1
+-   offset: 4
+-   datatype: 7
+-   count: 1
 - name: z
-  offset: 8
-  datatype: 7
-  count: 1
+-   offset: 8
+-   datatype: 7
+-   count: 1
 - name: intensity
-  offset: 12
-  datatype: 7
-  count: 1
+-   offset: 12
+-   datatype: 7
+-   count: 1
 is_bigendian: false
 point_step: 16
 row_step: 1317024
@@ -248,8 +246,8 @@ data:
 - 88
 - 66
 - '...'
-is_dense: false
----
+- is_dense: false
+
 
 # topic (2HZ): /scan
 ```

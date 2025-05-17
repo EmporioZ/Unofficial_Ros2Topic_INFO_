@@ -520,30 +520,30 @@ foot_speed_body:
 
 
 
-topic (10HZ): /joint_states
-
->>ros2 topic info /joint_states
+# topic (10HZ): /joint_states
+```
+ros2 topic info /joint_states
+```
 Type: sensor_msgs/msg/JointState
 Publisher count: 1
 Subscription count: 1
-
->>ros2 interface show sensor_msgs/msg/JointState
+```
+ros2 interface show sensor_msgs/msg/JointState
+```
 #This is a message that holds data to describe the state of a set of torque controlled joints.
 #The state of each joint (revolute or prismatic) is defined by:
 #the position of the joint (rad or m),
 #the velocity of the joint (rad/s or m/s) and
 #the effort that is applied in the joint (Nm or N).
 Each joint is uniquely identified by its name
-# The header specifies the time at which the joint states were recorded. All the joint states
-# in one message have to be recorded at the same time.
-#
-# This message consists of a multiple arrays, one for each part of the joint state.
-# The goal is to make each of the fields optional. When e.g. your joints have no
-# effort associated with them, you can leave the effort array empty.
-#
-# All arrays in this message should have the same size, or be empty.
-# This is the only way to uniquely associate the joint name with the correct
-# states.
+#The header specifies the time at which the joint states were recorded. All the joint states
+#in one message have to be recorded at the same time.
+#This message consists of a multiple arrays, one for each part of the joint state.
+#The goal is to make each of the fields optional. When e.g. your joints have no
+#effort associated with them, you can leave the effort array empty.
+#All arrays in this message should have the same size, or be empty.
+#This is the only way to uniquely associate the joint name with the correct
+#states.
 
 std_msgs/Header header
 	builtin_interfaces/Time stamp
@@ -555,8 +555,9 @@ string[] name
 float64[] position
 float64[] velocity
 float64[] effort
-
->>ros2 topic echo /go2_states
+```
+ros2 topic echo /go2_states
+```
 mode: 1
 progress: 0
 gait_type: 0
@@ -610,30 +611,32 @@ foot_speed_body:
 
 
 
-topic (200-300HZ): /joy
-
->>rostopic info /joy
+# topic (200-300HZ): /joy
+```
+rostopic info /joy
+```
 Type: sensor_msgs/msg/Joy
 Publisher count: 1
 Subscription count: 2
-
->>ros2 interface show sensor_msgs/msg/Joy
-# Reports the state of a joystick's axes and buttons.
-
-# The timestamp is the time at which data is received from the joystick.
+```
+ros2 interface show sensor_msgs/msg/Joy
+```
+#Reports the state of a joystick's axes and buttons.
+#The timestamp is the time at which data is received from the joystick.
 std_msgs/Header header
 	builtin_interfaces/Time stamp
 		int32 sec
 		uint32 nanosec
 	string frame_id
 
-# The axes measurements from a joystick.
+#The axes measurements from a joystick.
 float32[] axes
 
-# The buttons measurements from a joystick.
+#The buttons measurements from a joystick.
 int32[] buttons
-
->>ros2 topic echo /joy
+```
+ros2 topic echo /joy
+```
 ---
 header:
   stamp:
@@ -665,15 +668,17 @@ buttons:
 
 
 
-topic (200-300HZ): /cmd_vel
-
->>ros2 topic info /cmd_vel
+# topic (200-300HZ): /cmd_vel
+```
+ros2 topic info /cmd_vel
+```
 Type: geometry_msgs/msg/Twist
 Publisher count: 1
 Subscription count: 1
-
->>ros2 interface show geometry_msgs/msg/Twist
-# This expresses velocity in free space broken into its linear and angular parts.
+```
+ros2 interface show geometry_msgs/msg/Twist
+```
+#This expresses velocity in free space broken into its linear and angular parts.
 
 Vector3  linear
 	float64 x
@@ -683,8 +688,10 @@ Vector3  angular
 	float64 x
 	float64 y
 	float64 z
-
->>ros2 topic echo /cmd_vel
+```
+ros2 topic echo /cmd_vel
+```
+## What you record:
 linear:
   x: -0.0
   y: -0.0

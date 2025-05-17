@@ -1,5 +1,5 @@
 # Unofficial_Ros2Topic_INFO_
-## topic (10HZ): /imu
+# topic (10HZ): /imu
 ```
 ros2 topic info /imu
 ```
@@ -39,7 +39,7 @@ temperature: 79
 
 
 
-## topic (2HZ): /point_cloud2
+# topic (2HZ): /point_cloud2
 ```
 ros2 topic info /point_cloud2
 ```

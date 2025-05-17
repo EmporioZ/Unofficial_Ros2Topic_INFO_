@@ -6,15 +6,17 @@ ros2 topic info /imu
 Type: go2_interfaces/msg/IMU
 Publisher count: 1
 Subscription count: 
-
->>ros2 interface show go2_interfaces/msg/IMU
+```
+ros2 interface show go2_interfaces/msg/IMU
+```
 float32[4] quaternion
 float32[3] gyroscope
 float32[3] accelerometer
 float32[3] rpy
 int8 temperature
-
->>ros2 topic echo imu
+```
+ros2 topic echo imu
+```
 quaternion:
 - 0.6851580142974854
 - 0.004290999844670296
@@ -37,19 +39,20 @@ temperature: 79
 
 
 
-topic (2HZ): /point_cloud2
-
->>ros2 topic info /point_cloud2
+## topic (2HZ): /point_cloud2
+```
+ros2 topic info /point_cloud2
+```
 Type: sensor_msgs/msg/PointCloud2
 Publisher count: 1
 Subscription count: 0
-
->>ros2 interface show sensor_msgs/msg/PointCloud2
+```
+ros2 interface show sensor_msgs/msg/PointCloud2
+```
 #This message holds a collection of N-dimensional points, which may
 #contain additional information such as normals, intensity, etc. The
 #point data is stored as a binary blob, its layout described by the
 #contents of the "fields" array.
-#
 #The point cloud data may be organized 2d (image-like) or 1d (unordered).
 #Point clouds organized as 2d images may be produced by camera depth sensors
 #such as stereo or time-of-flight.
@@ -66,7 +69,7 @@ std_msgs/Header header
 uint32 height
 uint32 width
 
-# Describes the channels and their layout in the binary data blob.
+#Describes the channels and their layout in the binary data blob.
 PointField[] fields
 	uint8 INT8    = 1
 	uint8 UINT8   = 2
@@ -87,8 +90,9 @@ uint32  row_step     # Length of a row in bytes
 uint8[] data         # Actual point data, size is (row_step*height)
 
 bool is_dense        # True if there are no invalid points
-
->>ros2 topic echo /point_cloud2
+```
+ros2 topic echo /point_cloud2
+```
 header:
   stamp:
     sec: 1745585914
@@ -249,10 +253,7 @@ data:
 is_dense: false
 ---
 
-
-
-
-topic (2HZ): /scan
+# topic (2HZ): /scan
 
 >>ros2 topic info /scan
 Type: sensor_msgs/msg/LaserScan

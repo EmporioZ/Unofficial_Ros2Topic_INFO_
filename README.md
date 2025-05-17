@@ -40,6 +40,7 @@ temperature: 79
 
 
 # topic (2HZ): /point_cloud2
+
 ```
 ros2 topic info /point_cloud2
 ```
@@ -692,7 +693,7 @@ Vector3  angular
 ros2 topic echo /cmd_vel
 ```
 ## What you record
-
+-
 linear:
   x: -0.0
   y: -0.0
@@ -701,7 +702,7 @@ angular:
   x: 0.0
   y: 0.0
   z: 0.0
----
+-
 
 
 

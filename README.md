@@ -1,11 +1,14 @@
 # Unofficial_Go2_Ros2_Sdk_Topic_INFO_
 # topic (10HZ): /imu
+
 ```
 ros2 topic info /imu
 ```
+
 Type: go2_interfaces/msg/IMU
 Publisher count: 1
-Subscription count: 
+Subscription count
+
 ```
 ros2 interface show go2_interfaces/msg/IMU
 ```

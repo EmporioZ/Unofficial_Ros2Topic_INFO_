@@ -90,15 +90,16 @@ Describes the channels and their layout in the binary data blob.
 ```
 ros2 topic echo /point_cloud2
 ```
-- header:
--   stamp:
--     sec: 1745585914
--     nanosec: 375928826
--   frame_id: odom
-- height: 1
-- width: 82314
-- fields:
-- name: x
+```
+ header:
+   stamp:
+     sec: 1745585914
+     nanosec: 375928826
+   frame_id: odom
+ height: 1
+ width: 82314
+ fields:
+ name: x
 -   offset: 0
 -   datatype: 7
 -   count: 1

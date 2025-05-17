@@ -3,9 +3,9 @@
 ```
 ros2 topic info /imu
 ```
-Type: go2_interfaces/msg/IMU
-Publisher count: 1
-Subscription count: 
+>> Type: go2_interfaces/msg/IMU
+>> Publisher count: 1
+>> Subscription count: 
 ```
 ros2 interface show go2_interfaces/msg/IMU
 ```
@@ -50,15 +50,12 @@ Subscription count: 0
 ```
 ros2 interface show sensor_msgs/msg/PointCloud2
 ```
-#This message holds a collection of N-dimensional points, which may
-#contain additional information such as normals, intensity, etc. The
-#point data is stored as a binary blob, its layout described by the
-#contents of the "fields" array.
-#The point cloud data may be organized 2d (image-like) or 1d (unordered).
-#Point clouds organized as 2d images may be produced by camera depth sensors
-#such as stereo or time-of-flight.
+This message holds a collection of N-dimensional points, which may contain additional information such as normals, intensity, etc. 
+The point data is stored as a binary blob, its layout described by the contents of the "fields" array. 
+The point cloud data may be organized 2d (image-like) or 1d (unordered). 
+Point clouds organized as 2d images may be produced by camera depth sensors such as stereo or time-of-flight.
+Time of sensor data acquisition, and the coordinate frame ID (for 3d points).
 
-#Time of sensor data acquisition, and the coordinate frame ID (for 3d points).
 std_msgs/Header header
 	builtin_interfaces/Time stamp
 		int32 sec

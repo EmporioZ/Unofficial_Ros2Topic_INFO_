@@ -12,19 +12,19 @@ ros2 topic info /imu
 ```
 ros2 interface show go2_interfaces/msg/IMU
 ```
-float32[4] quaternion
-float32[3] gyroscope
-float32[3] accelerometer
-float32[3] rpy
-int8 temperature
+- float32[4] quaternion
+- float32[3] gyroscope
+- float32[3] accelerometer
+- float32[3] rpy
+- int8 temperature
 ```
 ros2 topic echo imu
 ```
 quaternion:
-- 0.6851580142974854
-- 0.004290999844670296
-- -0.005257999990135431
-- -0.7283629775047302
+- - 0.6851580142974854
+- - 0.004290999844670296
+- - -0.005257999990135431
+- - -0.7283629775047302
 gyroscope:
 - -0.011718000285327435
 - 0.003195999888703227

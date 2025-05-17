@@ -691,7 +691,8 @@ Vector3  angular
 ```
 ros2 topic echo /cmd_vel
 ```
-## What you record:
+## What you record
+
 linear:
   x: -0.0
   y: -0.0

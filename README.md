@@ -1,4 +1,4 @@
-# Unofficial_Ros2Topic_INFO_
+# Unofficial_Go2_Ros2_Sdk_Topic_INFO_
 # topic (10HZ): /imu
 ```
 ros2 topic info /imu
@@ -254,18 +254,18 @@ is_dense: false
 ---
 
 # topic (2HZ): /scan
-
->>ros2 topic info /scan
+```
+ros2 topic info /scan
+```
 Type: sensor_msgs/msg/LaserScan
 Publisher count: 1
 Subscription count: 0
 
 >>ros2 interface show sensor_msgs/msg/LaserScan
-# Single scan from a planar laser range-finder
-#
-# If you have another ranging device with different behavior (e.g. a sonar
-# array), please find or create a different message, since applications
-# will make fairly laser-specific assumptions about this data
+#Single scan from a planar laser range-finder
+#If you have another ranging device with different behavior (e.g. a sonar
+#array), please find or create a different message, since applications
+#will make fairly laser-specific assumptions about this data
 
 std_msgs/Header header # timestamp in the header is the acquisition time of
 	builtin_interfaces/Time stamp
@@ -295,8 +295,9 @@ float32[] ranges             # range data [m]
 float32[] intensities        # intensity data [device-specific units].  If your
                              # device does not provide intensities, please leave
                              # the array empty.
-
->>ros2 topic echo scan
+```
+ros2 topic echo scan
+```
 header:
   stamp:
     sec: 1745584333
@@ -442,16 +443,16 @@ ranges:
 intensities: []
 ---
 
-
-
-topic (10HZ): /go2_states
-
->>rostopic info /go2_states
+# topic (10HZ): /go2_states
+```
+rostopic info /go2_states
+```
 Type: go2_interfaces/msg/Go2State
 Publisher count: 1
 Subscription count: 0
-
->>ros2 interface show go2_interfaces/msg/Go2State
+```
+ros2 interface show go2_interfaces/msg/Go2State
+```
 uint8 mode
 int32 progress
 uint8 gait_type
@@ -463,8 +464,9 @@ float32[4] range_obstacle
 int16[4] foot_force
 float32[12] foot_position_body
 float32[12] foot_speed_body
-
->>ros2 topic echo /go2_states
+```
+ros2 topic echo /go2_states
+```
 mode: 1
 progress: 0
 gait_type: 0
@@ -526,14 +528,12 @@ Publisher count: 1
 Subscription count: 1
 
 >>ros2 interface show sensor_msgs/msg/JointState
-# This is a message that holds data to describe the state of a set of torque controlled joints.
-#
-# The state of each joint (revolute or prismatic) is defined by:
-#  * the position of the joint (rad or m),
-#  * the velocity of the joint (rad/s or m/s) and
-#  * the effort that is applied in the joint (Nm or N).
-#
-# Each joint is uniquely identified by its name
+#This is a message that holds data to describe the state of a set of torque controlled joints.
+#The state of each joint (revolute or prismatic) is defined by:
+#the position of the joint (rad or m),
+#the velocity of the joint (rad/s or m/s) and
+#the effort that is applied in the joint (Nm or N).
+Each joint is uniquely identified by its name
 # The header specifies the time at which the joint states were recorded. All the joint states
 # in one message have to be recorded at the same time.
 #
